@@ -16,11 +16,33 @@ import {
 } from './api';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tabParam = params.get('tab');
+    if (tabParam && ['dashboard', 'initiation', 'scope', 'schedule', 'cost', 'quality'].includes(tabParam)) {
+      return tabParam;
+    }
+    const hash = window.location.hash.replace('#', '');
+    if (hash && ['dashboard', 'initiation', 'scope', 'schedule', 'cost', 'quality'].includes(hash)) {
+      return hash;
+    }
+    return 'dashboard';
+  });
   const [dashboard, setDashboard] = useState(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [showReport, setShowReport] = useState(false);
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (['dashboard', 'initiation', 'scope', 'schedule', 'cost', 'quality'].includes(hash)) {
+        setActiveTab(hash);
+      }
+    };
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   const loadDashboard = async () => {
     setRefreshing(true);
