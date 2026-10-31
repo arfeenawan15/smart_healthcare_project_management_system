@@ -1,0 +1,16 @@
+{
+  "name": "spm-smart-healthcare-system",
+  "version": "1.0.0",
+  "description": "Smart Healthcare Project Management and Monitoring System - MERN Stack",
+  "scripts": {
+    "dev": "node start.js",
+    "start": "node start.js",
+    "server": "node server/server.js",
+    "client": "npm --prefix client run dev",
+    "test": "node server/test/spm.test.js"
+  },
+  "keywords": ["spm", "project-management", "evm", "wbs", "healthcare", "mern"],
+  "author": "",
+  "license": "ISC"
+}
+
