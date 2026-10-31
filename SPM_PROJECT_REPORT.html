@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPM Project Report - Smart Healthcare System | FA23-BSE-097</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; }
+    @media print {
+      body { background: white; color: black; }
+      .no-print { display: none; }
+      .page-break { page-break-before: always; }
+      @page { margin: 1.5cm; }
+    }
+  </style>
+</head>
+<body class="py-10 px-4 sm:px-8">
+  <!-- Print Bar -->
+  <div class="max-w-5xl mx-auto mb-6 bg-teal-900 text-white p-4 rounded-xl flex items-center justify-between shadow-lg no-print">
+    <div>
+      <h3 class="font-bold text-sm">Software Project Management Report (CSE-494)</h3>
+      <p class="text-xs text-teal-200">M. Anwar ul Arfeen (Qazi Arfeen Awan) • FA23-BSE-097</p>
+    </div>
+    <div class="flex items-center space-x-3">
+      <a href="https://smart-healthcare-project-management.vercel.app/" target="_blank" class="px-3 py-1.5 bg-teal-700 hover:bg-teal-600 rounded-lg text-xs font-semibold">Live App</a>
+      <a href="https://github.com/arfeenawan15/smart_healthcare_project_management_system" target="_blank" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-semibold">GitHub</a>
+      <button onclick="window.print()" class="px-4 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg text-xs font-bold shadow-md">Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <!-- Document Paper Container -->
+  <div class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl p-8 sm:p-14">
+    <h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">COMSATS UNIVERSITY ISLAMABAD, SAHIWAL CAMPUS</h1>
+<h2 class="text-2xl font-bold text-teal-800 mt-7 mb-3">DEPARTMENT OF SOFTWARE ENGINEERING</h2>
+
+<hr class="my-8 border-slate-200" />
+
+<h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">SOFTWARE PROJECT MANAGEMENT PLAN & SYSTEM REPORT</h1>
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2"><strong>SMART HEALTHCARE PROJECT MANAGEMENT AND MONITORING SYSTEM</strong></h3>
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><em>A Comprehensive 5-Hospital Network Project Management Solution</em></h4>
+
+<hr class="my-8 border-slate-200" />
+
+<strong>Submitted by:</strong>
+<strong>M. Anwar ul Arfeen (Qazi Arfeen Awan)</strong>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Registration #: <strong>FA23-BSE-097</strong></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Program: <strong>Bachelor of Science in Software Engineering (BSSE)</strong></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Semester: <strong>7th Semester</strong></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Course: <strong>Software Project Management (CSE-494)</strong></p>
+
+<strong>Submitted to:</strong>
+<strong>Sir Bilal Shabbir Qaisar</strong>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Department of Software Engineering</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">COMSATS University Islamabad, Sahiwal Campus</p>
+
+<strong>Date of Submission:</strong> October 2026
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2"><strong>Official Project Links & Verification</strong></h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>GitHub Source Code Repository:</strong> <a href="https://github.com/arfeenawan15/smart_healthcare_project_management_system" class="text-teal-600 hover:underline font-medium" target="_blank">https://github.com/arfeenawan15/smart_healthcare_project_management_system</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Live Cloud Deployment (Vercel):</strong> <a href="https://smart-healthcare-project-management.vercel.app/" class="text-teal-600 hover:underline font-medium" target="_blank">https://smart-healthcare-project-management.vercel.app/</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Technology Stack:</strong> React 19, Vite, Tailwind CSS, Lucide Icons, Node.js, Express 5, Persistent JSON Store, In-Browser LocalStorage Sync</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>System Maturity:</strong> 100% Core Modules Implemented (6/6 Modules + 9/9 Automated Tests Passing)</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h2 class="text-2xl font-bold text-teal-800 mt-7 mb-3">TABLE OF CONTENTS</h2>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <a href="#chapter-1-introduction" class="text-teal-600 hover:underline font-medium" target="_blank">CHAPTER 1: INTRODUCTION</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 1.1 <a href="#11-background--motivation" class="text-teal-600 hover:underline font-medium" target="_blank">Background & Motivation</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 1.2 <a href="#12-case-study-5-hospital-regional-network" class="text-teal-600 hover:underline font-medium" target="_blank">Case Study: 5-Hospital Regional Network</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 1.3 <a href="#13-project-objectives" class="text-teal-600 hover:underline font-medium" target="_blank">Project Objectives</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 1.4 <a href="#14-mapping-of-assignment-modules" class="text-teal-600 hover:underline font-medium" target="_blank">Mapping of Assignment Modules</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 1.5 <a href="#15-organization-of-the-report" class="text-teal-600 hover:underline font-medium" target="_blank">Organization of the Report</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <a href="#chapter-2-project-planning" class="text-teal-600 hover:underline font-medium" target="_blank">CHAPTER 2: PROJECT PLANNING</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 2.1 <a href="#21-project-scope-management" class="text-teal-600 hover:underline font-medium" target="_blank">Project Scope Management</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 2.2 <a href="#22-timeline-milestones--critical-path" class="text-teal-600 hover:underline font-medium" target="_blank">Timeline, Milestones & Critical Path</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 2.3 <a href="#23-project-resources--team-organization" class="text-teal-600 hover:underline font-medium" target="_blank">Project Resources & Team Organization</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 2.4 <a href="#24-budget--cost-plan" class="text-teal-600 hover:underline font-medium" target="_blank">Budget & Cost Plan</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 2.5 <a href="#25-quality--risk-planning" class="text-teal-600 hover:underline font-medium" target="_blank">Quality & Risk Planning</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 2.6 <a href="#26-change-control-plan" class="text-teal-600 hover:underline font-medium" target="_blank">Change Control Plan</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 2.7 <a href="#27-assumptions--constraints" class="text-teal-600 hover:underline font-medium" target="_blank">Assumptions & Constraints</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <a href="#chapter-3-system-design-and-architecture" class="text-teal-600 hover:underline font-medium" target="_blank">CHAPTER 3: SYSTEM DESIGN AND ARCHITECTURE</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 3.1 <a href="#31-technology-stack" class="text-teal-600 hover:underline font-medium" target="_blank">Technology Stack</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 3.2 <a href="#32-three-tier-system-architecture" class="text-teal-600 hover:underline font-medium" target="_blank">Three-Tier System Architecture</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 3.3 <a href="#33-database-design--entity-relationship-diagram-erd" class="text-teal-600 hover:underline font-medium" target="_blank">Database Design & Entity Relationship Diagram (ERD)</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 3.4 <a href="#34-class--service-architecture-diagram" class="text-teal-600 hover:underline font-medium" target="_blank">Class & Service Architecture Diagram</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 3.5 <a href="#35-database-schema-specifications" class="text-teal-600 hover:underline font-medium" target="_blank">Database Schema Specifications</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 3.6 <a href="#36-user-interface-design-modern-left-sidebar-layout" class="text-teal-600 hover:underline font-medium" target="_blank">User Interface Design (Modern Left-Sidebar Layout)</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 3.7 <a href="#37-module-implementation-maturity--audit" class="text-teal-600 hover:underline font-medium" target="_blank">Module Implementation Maturity & Audit</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">4. <a href="#chapter-4-implementation-phase" class="text-teal-600 hover:underline font-medium" target="_blank">CHAPTER 4: IMPLEMENTATION PHASE</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 4.1 <a href="#41-source-code-repository--project-structure" class="text-teal-600 hover:underline font-medium" target="_blank">Source Code Repository & Project Structure</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 4.2 <a href="#42-executive-dashboard-implementation" class="text-teal-600 hover:underline font-medium" target="_blank">Executive Dashboard Implementation</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 4.3 <a href="#43-task-status--work-tracking-implementation" class="text-teal-600 hover:underline font-medium" target="_blank">Task Status & Work Tracking Implementation</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">5. <a href="#chapter-5-core-algorithms--source-code" class="text-teal-600 hover:underline font-medium" target="_blank">CHAPTER 5: CORE ALGORITHMS & SOURCE CODE</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 5.1 <a href="#51-earned-value-management-evm-engine" class="text-teal-600 hover:underline font-medium" target="_blank">Earned Value Management (EVM) Engine</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 5.2 <a href="#52-schedule-delay--ripple-effect-propagation-engine" class="text-teal-600 hover:underline font-medium" target="_blank">Schedule Delay & Ripple Effect Propagation Engine</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 5.3 <a href="#53-change-request-approval--baseline-mutation-workflow" class="text-teal-600 hover:underline font-medium" target="_blank">Change Request Approval & Baseline Mutation Workflow</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">6. <a href="#chapter-6-testing-and-verification" class="text-teal-600 hover:underline font-medium" target="_blank">CHAPTER 6: TESTING AND VERIFICATION</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 6.1 <a href="#61-automated-backend-test-suite-execution" class="text-teal-600 hover:underline font-medium" target="_blank">Automated Backend Test Suite Execution</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 6.2 <a href="#62-detailed-test-cases--verification-results" class="text-teal-600 hover:underline font-medium" target="_blank">Detailed Test Cases & Verification Results</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 6.3 <a href="#63-in-browser-real-time-formula-validation" class="text-teal-600 hover:underline font-medium" target="_blank">In-Browser Real-Time Formula Validation</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 6.4 <a href="#64-verification-of-learning-outcomes" class="text-teal-600 hover:underline font-medium" target="_blank">Verification of Learning Outcomes</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">7. <a href="#chapter-7-project-closure-deployment--conclusion" class="text-teal-600 hover:underline font-medium" target="_blank">CHAPTER 7: PROJECT CLOSURE, DEPLOYMENT & CONCLUSION</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 7.1 <a href="#71-project-closure-criteria--status" class="text-teal-600 hover:underline font-medium" target="_blank">Project Closure Criteria & Status</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 7.2 <a href="#72-lessons-learned--best-practices" class="text-teal-600 hover:underline font-medium" target="_blank">Lessons Learned & Best Practices</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 7.3 <a href="#73-production-cloud-deployment-vercel" class="text-teal-600 hover:underline font-medium" target="_blank">Production Cloud Deployment (Vercel)</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 7.4 <a href="#74-conclusion--future-work" class="text-teal-600 hover:underline font-medium" target="_blank">Conclusion & Future Work</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- 7.5 <a href="#75-references" class="text-teal-600 hover:underline font-medium" target="_blank">References</a></p>
+
+<hr class="my-8 border-slate-200" />
+
+<h2 class="text-2xl font-bold text-teal-800 mt-7 mb-3">LIST OF FIGURES</h2>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.1:</strong> MERN Stack System Architecture (3-Tier Layered Architecture)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.2 1:</strong> Entity Relationship Diagram (ERD) of the SPM System (13 Normalized Collections)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.2 2:</strong> Class & Service Architecture Diagram (Object-Oriented Design)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 1:</strong> Executive Dashboard Interface (KPI Cards, Real-time Warnings, Left Sidebar)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 2:</strong> Project Initiation & Charter Interface (Governance & Objectives)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 3:</strong> Hospital Stakeholders Directory (5 Regional Hospitals)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 4:</strong> Scope Management & WBS Interface (Deliverables & Dictionary)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 5:</strong> Work Breakdown Structure Hierarchy & Progress Tracker</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 6:</strong> Schedule & Gantt Chart Interface (Activity Timeline & Dependencies)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 7:</strong> Predecessor Delay Ripple Effect Demonstration</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 8:</strong> Team Workload & Resource Allocation Distribution</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 9:</strong> Cost Management & Earned Value Management (EVM) Interface</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 10:</strong> Quality Management & 5x5 Probability-Impact Risk Matrix</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 3.6 11:</strong> Defect Tracker Log & Deliverable Verification Checklist</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 4.1:</strong> Monorepo Project Structure & Folder Organization</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 4.2:</strong> Executive Dashboard Implementation View</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 4.3:</strong> Project Task & Predecessor Management View</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 5.1:</strong> Mathematical EVM Calculation Engine Execution ($CPI$, $SPI$, $CV$, $SV$)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 5.2:</strong> Schedule Ripple Delay Calculation Logic Execution</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 5.3:</strong> Change Request Atomic Approval Workflow Execution</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 6.1:</strong> Automated Backend Test Suite Terminal Output (9/9 Passed 100%)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Figure 7.1:</strong> Production Application Deployed Live on Vercel Cloud Platform</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h2 class="text-2xl font-bold text-teal-800 mt-7 mb-3">LIST OF TABLES</h2>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 1.1:</strong> Mapping of Assignment Modules to System Modules</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 2.1:</strong> Smart Healthcare Project Requirements (Functional & Non-Functional)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 2.2:</strong> Project Schedule Activities, Predecessors & Durations</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 2.3:</strong> Project Milestones & Target Delivery Dates</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 2.4:</strong> Project Team Roles, Headcount & Responsibilities</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 2.5:</strong> Project Budget Allocation & Cost Breakdown (PKR)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 2.6:</strong> Quality Standards & Risk Management Matrix</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 3.1:</strong> Comprehensive Technology Stack Specification</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 3.2:</strong> Main Database Collections & Structural Purposes</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Table 3.3:</strong> SPM Assignment Requirements vs. Implemented Capabilities (100% Verified)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Tables 6.1 - 6.9:</strong> Automated Test Cases 1 through 9 Verification Records</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">CHAPTER 1: INTRODUCTION</h1>
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">1.1 Background & Motivation</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Software Project Management (SPM) is the indispensable discipline that governs the lifecycle of complex software development endeavors. Through systematic planning, real-time monitoring, disciplined resource allocation, quality assurance, and change control, project managers ensure that software products are delivered on time, within approved budgets, and to the rigorous specifications demanded by stakeholders. In safety-critical sectors—most notably healthcare—the failure to properly manage software projects leads not only to financial loss and operational disruption but directly impacts patient health outcomes and hospital efficiency.</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The <strong>Smart Healthcare Project Management and Monitoring System</strong> is an enterprise-grade web application engineered specifically to plan, execute, control, and close a multi-facility healthcare software deployment. Unlike traditional educational prototypes that only display static forms or theoretical mockups, this system implements active mathematical algorithms for:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <strong>Earned Value Management (EVM)</strong> to continuously track cost and schedule health ($CPI$, $SPI$, $CV$, $SV$, $EAC$, $VAC$).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <strong>Dynamic Predecessor Dependency Propagation</strong> to calculate the ripple effect of task delays on project completion dates.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <strong>Formal Scope Change Control</strong> allowing atomic baseline revision (budget expansion and schedule adjustments).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">4. <strong>Comprehensive Quality & Defect Tracking</strong> paired with a formal 5x5 Risk Matrix.</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The system is developed using the modern full-stack <strong>MERN architecture</strong>: <strong>React 19</strong>, <strong>Vite</strong>, and <strong>Tailwind CSS</strong> for the presentation layer; <strong>Node.js</strong> and <strong>Express 5</strong> for REST API services; and a persistent JSON document database (with dual-mode in-browser offline LocalStorage synchronization) ensuring maximum reliability across both server and serverless environments.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">1.2 Case Study: 5-Hospital Regional Network</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">This project plan addresses a regional healthcare organization deploying a centralized <strong>Smart Healthcare Management System</strong> across five major hospital facilities:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <strong>City Hospital, Lahore</strong> (Regional Hub / Level 1 Trauma Center)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <strong>General Hospital, Karachi</strong> (Outpatient & Specialized Surgery Center)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <strong>Memorial Hospital, Islamabad</strong> (Pediatric & Maternity Center)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">4. <strong>Allied Hospital, Multan</strong> (Diagnostic, Pathology & Lab Center)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">5. <strong>Civil Hospital, Faisalabad</strong> (Emergency & Critical Care Facility)</p>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>Project Baseline Constraints:</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Initial Duration:</strong> 16 Weeks (Weeks 1 to 16)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Initial Budget:</strong> PKR 5,000,000 (PKR 5.0 Million)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Initial Core Scope:</strong> Patient Appointment Scheduling, Electronic Lab Reports, Doctor Rostering & Scheduling, Online Video Consultations, and Centralized Billing & Invoicing.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Project Team:</strong> 7 dedicated engineering personnel (1 Project Manager, 2 Backend Developers, 2 Frontend Developers, 1 Database Engineer, 1 Quality Assurance Lead).</p>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>Case Study Scope Changes & Defect Dynamics:</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">During project execution at Week 8:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Change Request 1 (CR-001):</strong> Hospital management requested an <strong>AI-Based Preliminary Symptom Checker & Diagnosis Engine</strong> to triage incoming emergency cases. Impact: <strong>+PKR 500,000 budget</strong>, <strong>+2 weeks duration</strong>.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Change Request 2 (CR-002):</strong> A requirement emerged for a <strong>Cross-Platform Mobile Application</strong> (iOS & Android) for remote patient consultations. Impact: <strong>+PKR 300,000 budget</strong>, <strong>+1 week duration</strong>.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Revised Baseline upon CCB Approval:</strong> <strong>PKR 5,800,000 budget</strong> and <strong>19 weeks timeline</strong>.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Quality Incidents:</strong> Real-world defects were detected during integration testing:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <em>DEF-001:</em> Concurrent double-booking of doctor appointment slots across Lahore and Multan facilities (Critical Severity).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <em>DEF-002:</em> Patient National Identity Number (CNIC) duplication occurring during cross-hospital record synchronization (Critical Severity).</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The system successfully simulates, manages, and resolves these exact case study conditions.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">1.3 Project Objectives</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The primary engineering objectives of the Smart Healthcare SPM system are:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <strong>Centralized Integration Management:</strong> Provide an executive portal maintaining the Project Charter, 5-hospital stakeholder registry, and governance framework.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <strong>Rigorous Scope Management:</strong> Implement a 3-level Work Breakdown Structure (WBS), WBS Dictionary, and scope containment verification to prevent unauthorized scope creep.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <strong>Algorithmic Schedule Control:</strong> Provide interactive Gantt chart tracking, critical path indicators, and dynamic predecessor delay ripple recalculation.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">4. <strong>Mathematical Cost & EVM Engine:</strong> Compute real-time $PV$, $EV$, $AC$, $CPI$, $SPI$, $CV$, $SV$, $EAC$, and $VAC$, issuing immediate visual alerts when thresholds ($CPI < 1.0$ or $SPI < 1.0$) are breached.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">5. <strong>Quality Assurance & Defect Management:</strong> Track defect lifecycles from logging through root-cause analysis to resolution, paired with a deliverable quality verification checklist.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">6. <strong>Quantitative Risk Management:</strong> Provide a dynamic 5x5 Probability-Impact matrix with automated severity scoring ($P \times I$) and actionable mitigation protocols.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">7. <strong>Change Control Automation:</strong> Enable formal submission, impact assessment, and atomic approval of Change Requests that dynamically update system baselines.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">1.4 Mapping of Assignment Modules</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The project architecture strictly implements all required modules of the SPM midterm syllabus:</p>
+
+<strong>Table 1.1: Mapping of Assignment Modules to System Modules</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Assignment Module</th><th class="border border-slate-300 p-2.5">Implemented System Feature</th><th class="border border-slate-300 p-2.5">Primary View / Route</th><th class="border border-slate-300 p-2.5">Implementation Status</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Module 1: Project Initiation & Charter</strong></td><td class="border border-slate-300 p-2.5">Project Charter, Governance, 5-Hospital Stakeholders Directory</td><td class="border border-slate-300 p-2.5">Initiation View (`/api/charter`)</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented & Verified</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Module 2: Scope Management & WBS</strong></td><td class="border border-slate-300 p-2.5">3-Level WBS Tree, WBS Dictionary, Scope Containment, Progress</td><td class="border border-slate-300 p-2.5">Scope View (`/api/scope`)</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented & Verified</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Module 3: Schedule & Gantt Chart</strong></td><td class="border border-slate-300 p-2.5">Gantt Visualization, Predecessors, Delay Ripple Engine, Milestones</td><td class="border border-slate-300 p-2.5">Schedule View (`/api/schedule`)</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented & Verified</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Module 4: Resource Management</strong></td><td class="border border-slate-300 p-2.5">7 Dedicated Roles, Workload Distribution, Team Task Mapping</td><td class="border border-slate-300 p-2.5">Schedule & Charter Views</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented & Verified</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Module 5: Cost Management & EVM</strong></td><td class="border border-slate-300 p-2.5">EVM Engine ($CPI, SPI, EAC$), Cost Variances, Budget Breakdown</td><td class="border border-slate-300 p-2.5">Cost & EVM View (`/api/cost`)</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented & Verified</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Module 6: Quality & Risk Control</strong></td><td class="border border-slate-300 p-2.5">5x5 Risk Matrix, Defect Tracker, Deliverable Checklist, PDPC</td><td class="border border-slate-300 p-2.5">Quality & Risk View (`/api/quality`)</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented & Verified</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Module 7: Executive Dashboard</strong></td><td class="border border-slate-300 p-2.5">Unified Health KPIs, Alert Callouts, Phase Progress, Quick CR Approval</td><td class="border border-slate-300 p-2.5">Dashboard View (`/api/dashboard`)</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented & Verified</strong></td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">1.5 Organization of the Report</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The remainder of this report is organized into six technical chapters:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Chapter 2 (Project Planning)</strong> details requirements, schedule activities, resource allocations, budget plans, risk assessments, and change control procedures.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Chapter 3 (System Design & Architecture)</strong> presents the MERN stack architecture, ERD, class diagram, database specifications, and the newly refactored left-sidebar UI layout.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Chapter 4 (Implementation Phase)</strong> explains the monorepo codebase, directory organization, and frontend/backend integration.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Chapter 5 (Core Algorithms & Source Code)</strong> details the mathematical formulas and JavaScript code for EVM calculations, schedule ripple effects, and change approval.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Chapter 6 (Testing & Verification)</strong> documents the automated backend test harness, presenting 9 verified test cases passing with a 100% success rate.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Chapter 7 (Project Closure, Deployment & Conclusion)</strong> provides the closure audit, lessons learned, live Vercel deployment verification, and project conclusions.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">CHAPTER 2: PROJECT PLANNING</h1>
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">2.1 Project Scope Management</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Project scope definition establishes the boundaries of what is included—and explicitly excluded—from the project baseline. The scope is decomposed into 14 distinct functional and non-functional requirements mapped across the five hospital sites:</p>
+
+<strong>Table 2.1: Healthcare Project Requirements</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Req ID</th><th class="border border-slate-300 p-2.5">Requirement Description</th><th class="border border-slate-300 p-2.5">Category</th><th class="border border-slate-300 p-2.5">Target Hospital Site</th><th class="border border-slate-300 p-2.5">Baseline Status</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-001</strong></td><td class="border border-slate-300 p-2.5">Multi-hospital patient registration & master patient indexing</td><td class="border border-slate-300 p-2.5">Functional</td><td class="border border-slate-300 p-2.5">All 5 Hospitals</td><td class="border border-slate-300 p-2.5">Approved Baseline</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-002</strong></td><td class="border border-slate-300 p-2.5">Real-time doctor appointment booking & conflict prevention</td><td class="border border-slate-300 p-2.5">Functional</td><td class="border border-slate-300 p-2.5">Lahore, Karachi, Islamabad</td><td class="border border-slate-300 p-2.5">Approved Baseline</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-003</strong></td><td class="border border-slate-300 p-2.5">Laboratory diagnostic report generation & PDF secure dispatch</td><td class="border border-slate-300 p-2.5">Functional</td><td class="border border-slate-300 p-2.5">Multan, Lahore</td><td class="border border-slate-300 p-2.5">Approved Baseline</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-004</strong></td><td class="border border-slate-300 p-2.5">Telemedicine video consultation portal with WebRTC</td><td class="border border-slate-300 p-2.5">Functional</td><td class="border border-slate-300 p-2.5">Karachi, Islamabad</td><td class="border border-slate-300 p-2.5">Approved Baseline</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-005</strong></td><td class="border border-slate-300 p-2.5">Hospital billing, invoicing & national insurance integration</td><td class="border border-slate-300 p-2.5">Functional</td><td class="border border-slate-300 p-2.5">All 5 Hospitals</td><td class="border border-slate-300 p-2.5">Approved Baseline</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-006</strong></td><td class="border border-slate-300 p-2.5">Role-based access control (RBAC) & HIPAA/HL7 compliance</td><td class="border border-slate-300 p-2.5">Non-Functional</td><td class="border border-slate-300 p-2.5">All 5 Hospitals</td><td class="border border-slate-300 p-2.5">Approved Baseline</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-007</strong></td><td class="border border-slate-300 p-2.5">AI-Based Symptom Checker & Triage Diagnosis Engine</td><td class="border border-slate-300 p-2.5">Functional (CR-001)</td><td class="border border-slate-300 p-2.5">Emergency Facilities</td><td class="border border-slate-300 p-2.5"><em>Scope Change (Approved)</em></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-008</strong></td><td class="border border-slate-300 p-2.5">Native iOS & Android Patient Mobile Application</td><td class="border border-slate-300 p-2.5">Functional (CR-002)</td><td class="border border-slate-300 p-2.5">All 5 Hospitals</td><td class="border border-slate-300 p-2.5"><em>Scope Change (Approved)</em></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-009</strong></td><td class="border border-slate-300 p-2.5">Sub-second database query performance under peak load</td><td class="border border-slate-300 p-2.5">Non-Functional</td><td class="border border-slate-300 p-2.5">All 5 Hospitals</td><td class="border border-slate-300 p-2.5">Approved Baseline</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>REQ-010</strong></td><td class="border border-slate-300 p-2.5">End-to-end TLS 1.3 data encryption for patient PHI records</td><td class="border border-slate-300 p-2.5">Non-Functional</td><td class="border border-slate-300 p-2.5">All 5 Hospitals</td><td class="border border-slate-300 p-2.5">Approved Baseline</td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">2.2 Timeline, Milestones & Critical Path</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The project execution timeline is broken into sequential development phases spanning 16 weeks baseline, expanding to 19 weeks upon approval of CR-001 and CR-002.</p>
+
+<strong>Table 2.2: Project Schedule Activities, Predecessors & Durations</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Activity ID</th><th class="border border-slate-300 p-2.5">Activity Title</th><th class="border border-slate-300 p-2.5">Planned Duration</th><th class="border border-slate-300 p-2.5">Start Week</th><th class="border border-slate-300 p-2.5">End Week</th><th class="border border-slate-300 p-2.5">Predecessor ID</th><th class="border border-slate-300 p-2.5">Assigned Role</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>ACT-01</strong></td><td class="border border-slate-300 p-2.5">Requirement Elicitation & Stakeholder Sign-off</td><td class="border border-slate-300 p-2.5">2 Weeks</td><td class="border border-slate-300 p-2.5">Week 1</td><td class="border border-slate-300 p-2.5">Week 2</td><td class="border border-slate-300 p-2.5">None</td><td class="border border-slate-300 p-2.5">Project Manager</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>ACT-02</strong></td><td class="border border-slate-300 p-2.5">System Architecture & Database Design</td><td class="border border-slate-300 p-2.5">2 Weeks</td><td class="border border-slate-300 p-2.5">Week 3</td><td class="border border-slate-300 p-2.5">Week 4</td><td class="border border-slate-300 p-2.5">ACT-01</td><td class="border border-slate-300 p-2.5">Database Developer</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>ACT-03</strong></td><td class="border border-slate-300 p-2.5">Core Authentication, RBAC & API Framework</td><td class="border border-slate-300 p-2.5">3 Weeks</td><td class="border border-slate-300 p-2.5">Week 5</td><td class="border border-slate-300 p-2.5">Week 7</td><td class="border border-slate-300 p-2.5">ACT-02</td><td class="border border-slate-300 p-2.5">Backend Developer 1</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>ACT-04</strong></td><td class="border border-slate-300 p-2.5">Hospital Modules Development (EHR, Lab, Billing)</td><td class="border border-slate-300 p-2.5">4 Weeks</td><td class="border border-slate-300 p-2.5">Week 8</td><td class="border border-slate-300 p-2.5">Week 11</td><td class="border border-slate-300 p-2.5">ACT-03</td><td class="border border-slate-300 p-2.5">Full Dev Team</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>ACT-05</strong></td><td class="border border-slate-300 p-2.5">AI Diagnosis Engine Integration (CR-001)</td><td class="border border-slate-300 p-2.5">2 Weeks</td><td class="border border-slate-300 p-2.5">Week 12</td><td class="border border-slate-300 p-2.5">Week 13</td><td class="border border-slate-300 p-2.5">ACT-04</td><td class="border border-slate-300 p-2.5">Backend Developer 2</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>ACT-06</strong></td><td class="border border-slate-300 p-2.5">Mobile App Development & API Sync (CR-002)</td><td class="border border-slate-300 p-2.5">2 Weeks</td><td class="border border-slate-300 p-2.5">Week 13</td><td class="border border-slate-300 p-2.5">Week 14</td><td class="border border-slate-300 p-2.5">ACT-04</td><td class="border border-slate-300 p-2.5">Frontend Developer 2</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>ACT-07</strong></td><td class="border border-slate-300 p-2.5">Integration, Penetration & Performance Testing</td><td class="border border-slate-300 p-2.5">3 Weeks</td><td class="border border-slate-300 p-2.5">Week 15</td><td class="border border-slate-300 p-2.5">Week 17</td><td class="border border-slate-300 p-2.5">ACT-05, ACT-06</td><td class="border border-slate-300 p-2.5">QA Lead</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>ACT-08</strong></td><td class="border border-slate-300 p-2.5">Multi-Hospital User Training & Clinical Go-Live</td><td class="border border-slate-300 p-2.5">2 Weeks</td><td class="border border-slate-300 p-2.5">Week 18</td><td class="border border-slate-300 p-2.5">Week 19</td><td class="border border-slate-300 p-2.5">ACT-07</td><td class="border border-slate-300 p-2.5">Project Manager</td></tr></table></div>
+
+<strong>Table 2.3: Project Milestones & Target Delivery Dates</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Milestone ID</th><th class="border border-slate-300 p-2.5">Milestone Description</th><th class="border border-slate-300 p-2.5">Target Week</th><th class="border border-slate-300 p-2.5">Actual / Revised Week</th><th class="border border-slate-300 p-2.5">Completion Status</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>M1</strong></td><td class="border border-slate-300 p-2.5">Project Charter & Scope Baseline Formally Approved</td><td class="border border-slate-300 p-2.5">Week 2</td><td class="border border-slate-300 p-2.5">Week 2</td><td class="border border-slate-300 p-2.5"><strong>Completed</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>M2</strong></td><td class="border border-slate-300 p-2.5">System Architecture, ERD & DB Schema Approved</td><td class="border border-slate-300 p-2.5">Week 4</td><td class="border border-slate-300 p-2.5">Week 4</td><td class="border border-slate-300 p-2.5"><strong>Completed</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>M3</strong></td><td class="border border-slate-300 p-2.5">Core Hospital API & EHR Engine Operational</td><td class="border border-slate-300 p-2.5">Week 8</td><td class="border border-slate-300 p-2.5">Week 8</td><td class="border border-slate-300 p-2.5"><strong>Completed</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>M4</strong></td><td class="border border-slate-300 p-2.5">Hospital Subsystems Integration Complete</td><td class="border border-slate-300 p-2.5">Week 12</td><td class="border border-slate-300 p-2.5">Week 12</td><td class="border border-slate-300 p-2.5"><strong>Completed</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>M5</strong></td><td class="border border-slate-300 p-2.5">System Integration, Security & Performance Verified</td><td class="border border-slate-300 p-2.5">Week 17</td><td class="border border-slate-300 p-2.5">Week 17</td><td class="border border-slate-300 p-2.5"><strong>In Progress</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>M6</strong></td><td class="border border-slate-300 p-2.5">Final Multi-Hospital Clinical Go-Live & Project Sign-Off</td><td class="border border-slate-300 p-2.5">Week 19</td><td class="border border-slate-300 p-2.5">Week 19</td><td class="border border-slate-300 p-2.5"><strong>Scheduled</strong></td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">2.3 Project Resources & Team Organization</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">A high-performance multidisciplinary engineering team of seven specialists was assembled to deliver the system:</p>
+
+<strong>Table 2.4: Project Team Roles, Headcount & Responsibilities</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Team Member / Role</th><th class="border border-slate-300 p-2.5">Headcount</th><th class="border border-slate-300 p-2.5">Primary SPM Responsibilities</th><th class="border border-slate-300 p-2.5">Weekly Rate (PKR)</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Project Manager (Ahmed Khan)</strong></td><td class="border border-slate-300 p-2.5">1</td><td class="border border-slate-300 p-2.5">Integration management, schedule tracking, EVM control, CCB chair</td><td class="border border-slate-300 p-2.5">PKR 100,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Senior Backend Developer</strong></td><td class="border border-slate-300 p-2.5">1</td><td class="border border-slate-300 p-2.5">Express REST API, authentication, EHR core engine, transactional logic</td><td class="border border-slate-300 p-2.5">PKR 85,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Junior Backend Developer</strong></td><td class="border border-slate-300 p-2.5">1</td><td class="border border-slate-300 p-2.5">External lab integrations, AI service connector, billing modules</td><td class="border border-slate-300 p-2.5">PKR 65,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Senior Frontend Developer</strong></td><td class="border border-slate-300 p-2.5">1</td><td class="border border-slate-300 p-2.5">React 19 architecture, left-sidebar navigation layout, state management</td><td class="border border-slate-300 p-2.5">PKR 80,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Junior Frontend Developer</strong></td><td class="border border-slate-300 p-2.5">1</td><td class="border border-slate-300 p-2.5">Form validation, responsive layouts, data table visualizations</td><td class="border border-slate-300 p-2.5">PKR 60,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Database Architect</strong></td><td class="border border-slate-300 p-2.5">1</td><td class="border border-slate-300 p-2.5">Relational JSON schema design, indexing, data normalization, backup</td><td class="border border-slate-300 p-2.5">PKR 75,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>QA & Security Engineer</strong></td><td class="border border-slate-300 p-2.5">1</td><td class="border border-slate-300 p-2.5">Automated test authoring, defect tracking, penetration testing</td><td class="border border-slate-300 p-2.5">PKR 70,000</td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">2.4 Budget & Cost Plan</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The initial project baseline budget was calculated using bottom-up estimation at <strong>PKR 5,000,000</strong>. Following the formal approval of Change Requests CR-001 (PKR 500,000) and CR-002 (PKR 300,000), the revised baseline budget was established at <strong>PKR 5,800,000</strong>.</p>
+
+<strong>Table 2.5: Project Budget Allocation & Cost Breakdown (PKR)</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Cost Category</th><th class="border border-slate-300 p-2.5">Baseline Budget (PKR)</th><th class="border border-slate-300 p-2.5">Spent at W8 (PKR)</th><th class="border border-slate-300 p-2.5">Approved CRs (PKR)</th><th class="border border-slate-300 p-2.5">Revised Budget (PKR)</th><th class="border border-slate-300 p-2.5">Variance (CV)</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Software Development Labor</strong></td><td class="border border-slate-300 p-2.5">2,800,000</td><td class="border border-slate-300 p-2.5">1,600,000</td><td class="border border-slate-300 p-2.5">+500,000</td><td class="border border-slate-300 p-2.5">3,300,000</td><td class="border border-slate-300 p-2.5">-150,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Cloud Hosting & Server Infrastructure</strong></td><td class="border border-slate-300 p-2.5">600,000</td><td class="border border-slate-300 p-2.5">350,000</td><td class="border border-slate-300 p-2.5">+100,000</td><td class="border border-slate-300 p-2.5">700,000</td><td class="border border-slate-300 p-2.5">-50,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Quality Assurance & Security Audits</strong></td><td class="border border-slate-300 p-2.5">500,000</td><td class="border border-slate-300 p-2.5">250,000</td><td class="border border-slate-300 p-2.5">+100,000</td><td class="border border-slate-300 p-2.5">600,000</td><td class="border border-slate-300 p-2.5">0</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Hardware & Clinical Testing Devices</strong></td><td class="border border-slate-300 p-2.5">400,000</td><td class="border border-slate-300 p-2.5">250,000</td><td class="border border-slate-300 p-2.5">+50,000</td><td class="border border-slate-300 p-2.5">450,000</td><td class="border border-slate-300 p-2.5">-50,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Staff Training & Deployment Logistics</strong></td><td class="border border-slate-300 p-2.5">300,000</td><td class="border border-slate-300 p-2.5">50,000</td><td class="border border-slate-300 p-2.5">+50,000</td><td class="border border-slate-300 p-2.5">350,000</td><td class="border border-slate-300 p-2.5">0</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Management Contingency Reserve</strong></td><td class="border border-slate-300 p-2.5">400,000</td><td class="border border-slate-300 p-2.5">100,000</td><td class="border border-slate-300 p-2.5">0</td><td class="border border-slate-300 p-2.5">400,000</td><td class="border border-slate-300 p-2.5">0</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>TOTAL PROJECT BUDGET</strong></td><td class="border border-slate-300 p-2.5"><strong>5,000,000</strong></td><td class="border border-slate-300 p-2.5"><strong>2,600,000</strong></td><td class="border border-slate-300 p-2.5"><strong>+800,000</strong></td><td class="border border-slate-300 p-2.5"><strong>5,800,000</strong></td><td class="border border-slate-300 p-2.5"><strong>-250,000</strong></td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">2.5 Quality & Risk Planning</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Software quality in healthcare requires zero-tolerance for data corruption and scheduling collisions. A formal 5x5 Probability-Impact matrix is utilized:</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$\text{Severity Score} = \text{Probability} (1\text{ to }5) \times \text{Impact} (1\text{ to }5)$$</p>
+
+<strong>Table 2.6: Quality Standards & Risk Management Matrix</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Risk ID</th><th class="border border-slate-300 p-2.5">Risk Description</th><th class="border border-slate-300 p-2.5">Category</th><th class="border border-slate-300 p-2.5">Prob (1-5)</th><th class="border border-slate-300 p-2.5">Impact (1-5)</th><th class="border border-slate-300 p-2.5">Severity Score</th><th class="border border-slate-300 p-2.5">Planned Mitigation Strategy</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>RSK-01</strong></td><td class="border border-slate-300 p-2.5">Concurrent appointment double-booking in clinic</td><td class="border border-slate-300 p-2.5">Quality</td><td class="border border-slate-300 p-2.5">4</td><td class="border border-slate-300 p-2.5">5</td><td class="border border-slate-300 p-2.5"><strong>20 (High)</strong></td><td class="border border-slate-300 p-2.5">Implement database-level row locking & atomic reservation</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>RSK-02</strong></td><td class="border border-slate-300 p-2.5">Patient CNIC duplication across regional hospitals</td><td class="border border-slate-300 p-2.5">Data Integrity</td><td class="border border-slate-300 p-2.5">3</td><td class="border border-slate-300 p-2.5">5</td><td class="border border-slate-300 p-2.5"><strong>15 (High)</strong></td><td class="border border-slate-300 p-2.5">Master Patient Index (MPI) with unique CNIC hash indexes</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>RSK-03</strong></td><td class="border border-slate-300 p-2.5">Scope creep from hospital medical directors</td><td class="border border-slate-300 p-2.5">Scope</td><td class="border border-slate-300 p-2.5">4</td><td class="border border-slate-300 p-2.5">4</td><td class="border border-slate-300 p-2.5"><strong>16 (High)</strong></td><td class="border border-slate-300 p-2.5">Strict CCB charter; all enhancements must go through formal CR</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>RSK-04</strong></td><td class="border border-slate-300 p-2.5">Schedule delays in hospital legacy data migration</td><td class="border border-slate-300 p-2.5">Schedule</td><td class="border border-slate-300 p-2.5">3</td><td class="border border-slate-300 p-2.5">4</td><td class="border border-slate-300 p-2.5"><strong>12 (Medium)</strong></td><td class="border border-slate-300 p-2.5">Automated ETL data pipeline with staged dry-run migrations</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>RSK-05</strong></td><td class="border border-slate-300 p-2.5">HIPAA / National Health Data compliance breach</td><td class="border border-slate-300 p-2.5">Security</td><td class="border border-slate-300 p-2.5">2</td><td class="border border-slate-300 p-2.5">5</td><td class="border border-slate-300 p-2.5"><strong>10 (Medium)</strong></td><td class="border border-slate-300 p-2.5">End-to-end TLS 1.3 encryption, audit logs, zero public access</td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">2.6 Change Control Plan</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Unauthorized scope creep is prevented by enforcing a mandatory 5-step Change Control Board (CCB) procedure:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <strong>Change Request Submission:</strong> The stakeholder submits a formal CR documenting the requested modification, business justification, and urgency.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <strong>Technical & Algorithmic Impact Assessment:</strong> The Project Manager and Lead Architect evaluate the cost impact ($\Delta \text{Cost}$ in PKR) and schedule impact ($\Delta \text{Time}$ in weeks).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <strong>CCB Deliberation:</strong> The Change Control Board (consisting of the Project Manager, Lead Architect, and Hospital Executive Sponsor) convenes to approve, reject, or defer the request.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">4. <strong>Baseline Re-negotiation & Mutation:</strong> Upon approval, the system atomically updates `revisedBudget` and `revisedWeeks` in the project charter database.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">5. <strong>Execution & Traceability:</strong> Approved changes are converted into actionable WBS work packages and assigned to developers.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">2.7 Assumptions & Constraints</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Assumptions:</strong> High-speed internet connectivity is maintained across all five hospital facilities; hospital medical records staff are available for weekly sprint reviews; clinical stakeholder approvals are delivered within 48 hours of milestone completion.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Constraints:</strong> Total project budget cannot exceed PKR 6,000,000 under any circumstances; the clinical go-live must occur within 20 weeks; patient health data must comply with national healthcare privacy standards.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">CHAPTER 3: SYSTEM DESIGN AND ARCHITECTURE</h1>
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">3.1 Technology Stack</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The Smart Healthcare SPM system is developed using modern, production-grade web technologies:</p>
+
+<strong>Table 3.1: Comprehensive Technology Stack Specification</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Architectural Layer</th><th class="border border-slate-300 p-2.5">Technology Selected</th><th class="border border-slate-300 p-2.5">Version</th><th class="border border-slate-300 p-2.5">Role in System Architecture</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Frontend Framework</strong></td><td class="border border-slate-300 p-2.5"><strong>React SPA</strong></td><td class="border border-slate-300 p-2.5">19.0.0</td><td class="border border-slate-300 p-2.5">Declarative component UI, dynamic view switching, reactive state management</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Build & Bundling</strong></td><td class="border border-slate-300 p-2.5"><strong>Vite</strong></td><td class="border border-slate-300 p-2.5">8.3.5</td><td class="border border-slate-300 p-2.5">Sub-second Hot Module Replacement (HMR) and optimized ES-module production builds</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>CSS Styling Engine</strong></td><td class="border border-slate-300 p-2.5"><strong>Tailwind CSS</strong></td><td class="border border-slate-300 p-2.5">3.4.0</td><td class="border border-slate-300 p-2.5">Compact utility styling, clean typography, responsive layout, status badge themes</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>UI Iconography</strong></td><td class="border border-slate-300 p-2.5"><strong>Lucide React</strong></td><td class="border border-slate-300 p-2.5">0.460.0</td><td class="border border-slate-300 p-2.5">High-contrast visual icons for sidebar navigation, KPI cards, and alert notices</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Backend Framework</strong></td><td class="border border-slate-300 p-2.5"><strong>Node.js & Express</strong></td><td class="border border-slate-300 p-2.5">5.0.0 / 24.13</td><td class="border border-slate-300 p-2.5">High-performance asynchronous REST API routing and mathematical service engines</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Data Persistence</strong></td><td class="border border-slate-300 p-2.5"><strong>JSON Document Store</strong></td><td class="border border-slate-300 p-2.5">Schema v2</td><td class="border border-slate-300 p-2.5">ACID-compliant synchronous file storage (`server/data/db.json`)</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Offline Synchronization</strong></td><td class="border border-slate-300 p-2.5"><strong>LocalStorage Engine</strong></td><td class="border border-slate-300 p-2.5">HTML5 Spec</td><td class="border border-slate-300 p-2.5">Complete in-browser client persistence when running in static/serverless mode</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Automated Testing</strong></td><td class="border border-slate-300 p-2.5"><strong>Node Assert Harness</strong></td><td class="border border-slate-300 p-2.5">Built-in</td><td class="border border-slate-300 p-2.5">9 comprehensive automated tests validating business logic and formulas</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Production Hosting</strong></td><td class="border border-slate-300 p-2.5"><strong>Vercel Cloud</strong></td><td class="border border-slate-300 p-2.5">Production</td><td class="border border-slate-300 p-2.5">Global CDN deployment with serverless edge capability</td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">3.2 Three-Tier System Architecture</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The application is structured into a clean three-tier architecture ensuring complete separation of concerns between presentation, business logic, and persistence.</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/07_architecture.png" alt="Figure 3.1: MERN Stack System Architecture" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.1: MERN Stack System Architecture</p>
+</div>
+<em>Figure 3.1: MERN Stack System Architecture (Presentation, Application, and Data Tiers)</em>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <strong>Presentation Tier (Client):</strong> A single-page application (SPA) built with React 19 featuring a modern left vertical navigation bar (`Sidebar.jsx`), top header with quick action triggers (`TopHeader.jsx`), and dedicated modular views (`DashboardView.jsx`, `InitiationView.jsx`, `ScopeView.jsx`, `ScheduleView.jsx`, `CostEVMView.jsx`, `QualityRiskView.jsx`).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <strong>Application Tier (Express REST API):</strong> Modular route handlers (`/api/charter`, `/api/scope`, `/api/schedule`, `/api/cost`, `/api/quality`, `/api/dashboard`) executing business logic, mathematical EVM calculations, and schedule ripple analysis.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <strong>Data Tier (Document Storage):</strong> A structured JSON database containing 13 normalized collections. Writes are executed synchronously using atomic filesystem writes, preventing race conditions.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">3.3 Database Design & Entity Relationship Diagram (ERD)</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The database structure is normalized into 13 interconnected entities supporting full referential integrity:</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/08_erd.png" alt="Figure 3.2 1: Entity Relationship Diagram" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.2 1: Entity Relationship Diagram</p>
+</div>
+<em>Figure 3.2 1: Entity Relationship Diagram (ERD) across the 13 Core SPM Collections</em>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">3.4 Class & Service Architecture Diagram</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The system's Object-Oriented design is centered around high cohesion and low coupling across three primary mathematical and algorithmic services:</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/09_class_diagram.png" alt="Figure 3.2 2: Class & Service Architecture Diagram" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.2 2: Class & Service Architecture Diagram</p>
+</div>
+<em>Figure 3.2 2: Class & Service Architecture Diagram of Algorithmic Engines</em>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">3.5 Database Schema Specifications</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The database comprises 13 distinct collections structured as follows:</p>
+
+<strong>Table 3.2: Main Database Collections & Structural Purposes</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Collection Name</th><th class="border border-slate-300 p-2.5">Primary Key</th><th class="border border-slate-300 p-2.5">Key Attributes</th><th class="border border-slate-300 p-2.5">Structural Purpose</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`projects`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`name, baselineBudget, revisedBudget, baselineWeeks, revisedWeeks, currentWeek`</td><td class="border border-slate-300 p-2.5">Master project record maintaining baseline parameters</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`stakeholders`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`hospital, contact, role, interest, influence, approvalStatus`</td><td class="border border-slate-300 p-2.5">Registry of regional hospital administrative stakeholders</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`governance`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`structure, decisionCadence, escalationPath, auditLog`</td><td class="border border-slate-300 p-2.5">Formal management and escalation hierarchy</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`requirements`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`title, category, source, status, priority, hospitalSite`</td><td class="border border-slate-300 p-2.5">Functional and non-functional requirements inventory</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`wbs`</td><td class="border border-slate-300 p-2.5">`code`</td><td class="border border-slate-300 p-2.5">`title, level, deliverable, owner, plannedCost, progressPercent`</td><td class="border border-slate-300 p-2.5">3-Level Work Breakdown Structure elements</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`activities`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`title, durationWeeks, startWeek, predecessor, delayWeeks, assignedRole`</td><td class="border border-slate-300 p-2.5">Schedule activities and dependency links</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`milestones`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`title, targetWeek, actualWeek, status, deliverableVerified`</td><td class="border border-slate-300 p-2.5">Major milestone tracking and sign-off criteria</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`cost_baseline`</td><td class="border border-slate-300 p-2.5">`category`</td><td class="border border-slate-300 p-2.5">`description, baselinePKR, spentPKR, forecastPKR`</td><td class="border border-slate-300 p-2.5">Categorized budget allocation and expenditure ledger</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`evm_tracking`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`week, plannedValue, earnedValue, actualCost, notes`</td><td class="border border-slate-300 p-2.5">Weekly historical Earned Value tracking points</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`change_requests`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`title, requester, costImpactPKR, scheduleWeeks, status, approvedBy`</td><td class="border border-slate-300 p-2.5">Formal change control records and impact evaluations</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`risks`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`description, category, probability, impact, severityScore, mitigation`</td><td class="border border-slate-300 p-2.5">5x5 Probability-Impact risk register</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`defects`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`title, severity, module, status, assignedTo, resolutionNotes`</td><td class="border border-slate-300 p-2.5">Quality defect tracking and lifecycle records</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5">`deliverables`</td><td class="border border-slate-300 p-2.5">`id`</td><td class="border border-slate-300 p-2.5">`wbsCode, deliverableName, qualityCriteria, verificationStatus`</td><td class="border border-slate-300 p-2.5">Formal quality checklist for deliverable acceptance</td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">3.6 User Interface Design (Modern Left-Sidebar Layout)</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The user interface has been redesigned to eliminate messy visual clutter and replace oversized boxes with a modern, compact, professional left-sidebar navigation layout:</p>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>3.6.1 Executive Dashboard Interface</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The Executive Dashboard presents real-time project health at a glance, displaying EVM performance indicators ($CPI = 0.83$, $SPI = 0.77$), active alert notices, budget progress bars, phase completion breakdown, and a change request panel with one-click approval buttons.</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/01_dashboard.png" alt="Figure 3.6 1: Executive Dashboard Interface" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.6 1: Executive Dashboard Interface</p>
+</div>
+<em>Figure 3.6 1: Modern Executive Dashboard Interface with Left Sidebar Navigation</em>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>3.6.2 Project Initiation & Integration Interface</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Maintains the formal Project Charter, measurable business objectives, executive governance structure, and the complete 5-hospital stakeholder directory.</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/02_initiation.png" alt="Figure 3.6 2: Project Initiation & Charter Interface" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.6 2: Project Initiation & Charter Interface</p>
+</div>
+<em>Figure 3.6 2: Project Initiation, Charter, and Governance Management Interface</em>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>3.6.3 Scope Management & WBS Interface</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Visualizes the 3-level Work Breakdown Structure, WBS Dictionary, scope containment metrics, and requirement tracing.</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/03_scope.png" alt="Figure 3.6 4: Scope Management and WBS Interface" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.6 4: Scope Management and WBS Interface</p>
+</div>
+<em>Figure 3.6 4: Scope Management & Work Breakdown Structure (WBS) Interface</em>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>3.6.4 Schedule & Gantt Chart Interface</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Presents interactive activity timelines, predecessor dependency mapping, critical path indicators, and dynamic delay ripple effect calculations.</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/04_schedule.png" alt="Figure 3.6 6: Schedule and Gantt Chart Interface" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.6 6: Schedule and Gantt Chart Interface</p>
+</div>
+<em>Figure 3.6 6: Schedule Management, Gantt Chart, and Predecessor Tracking Interface</em>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>3.6.5 Cost Management & EVM Interface</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Displays the full suite of Earned Value Management formulas, mathematical metric cards ($PV, EV, AC, CV, SV, CPI, SPI, BAC, EAC, VAC$), real-time cost overrun and schedule delay warnings, and the detailed budget allocation ledger.</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/05_cost_evm.png" alt="Figure 3.6 9: Cost Management and EVM Interface" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.6 9: Cost Management and EVM Interface</p>
+</div>
+<em>Figure 3.6 9: Cost Management and Earned Value Management (EVM) Calculation Interface</em>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>3.6.6 Quality Management & Risk Control Interface</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Integrates the interactive 5x5 Probability-Impact Risk Matrix, Defect Tracker (logging severity and resolution notes), Deliverable Quality Verification Checklist, and Process Decision Program Chart (PDPC).</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/06_quality_risk.png" alt="Figure 3.6 10: Quality Management and Risk Control" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 3.6 10: Quality Management and Risk Control</p>
+</div>
+<em>Figure 3.6 10: Quality Management, Defect Tracking, and 5x5 Risk Matrix Interface</em>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">3.7 Module Implementation Maturity & Audit</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">In traditional academic assignments, complex modules such as dynamic EVM engines, predecessor ripple calculation, defect trackers, and risk matrices are left as theoretical designs or marked "Not Implemented". <strong>In this project, 100% of the core modules are fully implemented, verified with automated tests, and operational in production.</strong></p>
+
+<strong>Table 3.3: SPM Assignment Requirements vs. Implemented Capabilities (100% Verified)</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Core SPM Module</th><th class="border border-slate-300 p-2.5">Assignment Requirement</th><th class="border border-slate-300 p-2.5">System Implementation</th><th class="border border-slate-300 p-2.5">Verification Status</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Project Initiation</strong></td><td class="border border-slate-300 p-2.5">Project Charter & Stakeholders</td><td class="border border-slate-300 p-2.5">Formal Charter, 5-Hospital Registry, Governance framework</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Scope Management</strong></td><td class="border border-slate-300 p-2.5">WBS & Scope Containment</td><td class="border border-slate-300 p-2.5">3-Level WBS Tree, Dictionary, Progress Bars, CR Traceability</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Schedule Control</strong></td><td class="border border-slate-300 p-2.5">Gantt Chart & Dependencies</td><td class="border border-slate-300 p-2.5">Gantt Timeline, Predecessor Engine, Delay Ripple Propagation</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Resource Management</strong></td><td class="border border-slate-300 p-2.5">Team Roles & Responsibilities</td><td class="border border-slate-300 p-2.5">7 Specialized Roles, Workload Mapping, Cost Allocations</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Cost & EVM Control</strong></td><td class="border border-slate-300 p-2.5">EVM Calculations & Thresholds</td><td class="border border-slate-300 p-2.5">Active Engine ($CPI, SPI, CV, SV, EAC, VAC$), Warning Alerts</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Quality & Risk Control</strong></td><td class="border border-slate-300 p-2.5">Defect Log & Risk Assessment</td><td class="border border-slate-300 p-2.5">5x5 Matrix, Defect Tracker with Badges, Quality Checklist</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Executive Dashboard</strong></td><td class="border border-slate-300 p-2.5">Real-time Health Synthesis</td><td class="border border-slate-300 p-2.5">Top KPI Cards, Alert Notices, Quick Change Request Approvals</td><td class="border border-slate-300 p-2.5"><strong>100% Implemented</strong></td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">CHAPTER 4: IMPLEMENTATION PHASE</h1>
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">4.1 Source Code Repository & Project Structure</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The project is hosted publicly on GitHub and organized as a clean, full-stack monorepo:</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/11_dir_tree.png" alt="Figure 4.1: Project Directory Structure" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 4.1: Project Directory Structure</p>
+</div>
+<em>Figure 4.1: Clean Monorepo Directory Organization (`client/`, `server/`, `server/data/`, `server/test/`)</em>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>`client/` (Frontend React SPA):</strong></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/components/Sidebar.jsx`: Modern vertical sidebar with active tab highlighting and quick action buttons.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/components/TopHeader.jsx`: Top navigation header displaying project title, active hospital count, and status badges.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/components/DashboardView.jsx`: Executive summary view aggregating all project metrics.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/components/InitiationView.jsx`: Project charter, objectives, and stakeholder management.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/components/ScopeView.jsx`: Work Breakdown Structure, deliverables, and dictionary.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/components/ScheduleView.jsx`: Gantt chart, activities, predecessors, and delay ripple indicators.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/components/CostEVMView.jsx`: Mathematical EVM metric cards, formulas, and budget tracking.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/components/QualityRiskView.jsx`: 5x5 risk matrix, defect log, and deliverable checklist.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `src/api.js`: Unified data layer with REST API client and dual-mode LocalStorage fallback engine.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>`server/` (Backend Node.js & Express):</strong></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `server.js`: Express application initialization, CORS middleware, single-port static client serving.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `db.js`: Core data access layer, JSON file I/O, mathematical EVM engine, schedule ripple engine.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `routes/`: Modular Express 5 router endpoints (`charter.js`, `scope.js`, `schedule.js`, `cost.js`, `quality.js`, `dashboard.js`).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `test/spm.test.js`: Comprehensive 9-test automated test suite.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- `data/db.json`: Persistent JSON database holding all 13 collections.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">4.2 Executive Dashboard Implementation</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The Executive Dashboard component (`DashboardView.jsx`) synthesizes metrics from all six modules into a coherent operational display:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <strong>Top Health Banner:</strong> Displays whether the project is currently "At Risk" due to cost or schedule variances.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <strong>Four Primary KPI Cards:</strong></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Cost Performance Index ($CPI$):</strong> Value (0.83), status badge ("Cost Overrun"), and formula reference ($EV / AC$).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Schedule Performance Index ($SPI$):</strong> Value (0.77), status badge ("Behind Schedule"), and formula reference ($EV / PV$).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Budget Expended ($AC$):</strong> Current expenditure (PKR 2.6M) relative to revised baseline (PKR 5.8M).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Current Timeline:</strong> Current progress (Week 8) relative to revised deadline (19 Weeks).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <strong>Change Request Action Panel:</strong> Provides one-click approval buttons that trigger immediate atomic baseline re-calculation and UI re-rendering.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">4.3 Task Status & Work Tracking Implementation</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">Tasks and schedule activities are tracked with real-time status attributes:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>`COMPLETED` (100% Progress):</strong> Requirements analysis and architecture design.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>`IN_PROGRESS` (Active Work):</strong> Core Hospital Subsystem development.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>`DELAYED` (Schedule Slip):</strong> Activities experiencing delivery delays, triggering the predecessor ripple engine to propagate deadline shifts across all dependent tasks.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">CHAPTER 5: CORE ALGORITHMS & SOURCE CODE</h1>
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">5.1 Earned Value Management (EVM) Engine</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The EVM algorithmic engine is implemented in `server/db.js` and mirrored in `client/src/api.js` for dual-mode execution.</p>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>Mathematical Formulas:</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <strong>Planned Value ($PV$):</strong> Cumulative approved budget scheduled to be accomplished by Week $t$:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$PV = \sum \text{Planned Budget of Activities Scheduled up to Week } t$$</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <strong>Earned Value ($EV$):</strong> Value of work actually performed expressed in terms of approved budget:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$EV = \sum (\text{Planned Cost} \times \text{Percent Complete})$$</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <strong>Actual Cost ($AC$):</strong> Total direct and indirect expenditures incurred:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$AC = \sum \text{Expenditures to Date}$$</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">4. <strong>Cost Variance ($CV$):</strong> Financial difference between earned value and actual cost:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$CV = EV - AC \quad (\text{Negative indicates Cost Overrun})$$</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">5. <strong>Schedule Variance ($SV$):</strong> Progress difference in financial terms:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$SV = EV - PV \quad (\text{Negative indicates Schedule Slip})$$</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">6. <strong>Cost Performance Index ($CPI$):</strong> Efficiency of capital utilization:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$CPI = \frac{EV}{AC} \quad (CPI < 1.0 \implies \text{Over Budget})$$</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">7. <strong>Schedule Performance Index ($SPI$):</strong> Efficiency of time utilization:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$SPI = \frac{EV}{PV} \quad (SPI < 1.0 \implies \text{Behind Schedule})$$</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">8. <strong>Estimate at Completion ($EAC$):</strong> Projected total project cost based on current cost efficiency:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$EAC = \frac{BAC}{CPI}$$</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">9. <strong>Variance at Completion ($VAC$):</strong> Projected final budget surplus or deficit:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">$$VAC = BAC - EAC$$</p>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>Production JavaScript Implementation (`server/db.js`):</strong></h4>
+<pre class="bg-slate-900 text-slate-100 p-4 rounded-xl my-4 text-xs font-mono overflow-x-auto shadow-inner"><code>javascript
+<p class="my-3 text-slate-700 leading-relaxed text-sm">function calculateEVM() {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const db = readDatabase();</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const currentWeek = db.project.currentWeek; // Week 8</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const BAC = db.project.revisedBudget; // PKR 5,800,000 (or 5,000,000 baseline)</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 1. Calculate Planned Value (PV) up to current week</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const PV = db.activities</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">.filter(a =&gt; a.startWeek &lt;= currentWeek)</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">.reduce((sum, a) =&gt; {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const plannedPortion = Math.min(1, Math.max(0, (currentWeek - a.startWeek + 1) / a.durationWeeks));</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">return sum + (a.plannedCost * plannedPortion);</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">}, 0);</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 2. Calculate Earned Value (EV) based on actual percentage completed</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const EV = db.wbs.reduce((sum, item) =&gt; sum + (item.plannedCost * (item.progressPercent / 100)), 0);</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 3. Calculate Actual Cost (AC) from expenditures</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const AC = db.cost_baseline.reduce((sum, item) =&gt; sum + item.spentPKR, 0);</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 4. Compute Variances and Performance Indexes</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const CV = EV - AC;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const SV = EV - PV;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const CPI = AC &gt; 0 ? parseFloat((EV / AC).toFixed(2)) : 1.0;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const SPI = PV &gt; 0 ? parseFloat((EV / PV).toFixed(2)) : 1.0;</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 5. Compute Forecasts</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const EAC = CPI &gt; 0 ? Math.round(BAC / CPI) : BAC;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const VAC = BAC - EAC;</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 6. Generate Health Warning Flags</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const warnings = [];</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if (CPI &lt; 1.0) warnings.push({ type: 'COST_OVERRUN', message: `CPI is ${CPI} (&lt; 1.0). Project is spending PKR ${(1/CPI).toFixed(2)} for every PKR 1.00 of earned value.` });</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if (SPI &lt; 1.0) warnings.push({ type: 'SCHEDULE_DELAY', message: `SPI is ${SPI} (&lt; 1.0). Project is progressing at ${(SPI*100).toFixed(0)}% of the planned schedule rate.` });</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">return { PV, EV, AC, CV, SV, CPI, SPI, BAC, EAC, VAC, warnings, status: warnings.length === 0 ? 'HEALTHY' : 'AT_RISK' };</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">}</p>
+</code></pre>
+
+<h4 class="text-base font-semibold text-teal-700 mt-4 mb-2"><strong>Worked Numerical Example (Week 8 Case Study Data):</strong></h4>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$BAC$ (Budget at Completion):</strong> PKR 5,000,000</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$PV$ (Planned Value):</strong> PKR 2,800,000</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$EV$ (Earned Value):</strong> PKR 2,150,000</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$AC$ (Actual Cost):</strong> PKR 2,600,000</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$CV = EV - AC = 2,150,000 - 2,600,000 =$</strong> $-\text{PKR } 450,000$ <em>(Cost Overrun)</em></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$SV = EV - PV = 2,150,000 - 2,800,000 =$</strong> $-\text{PKR } 650,000$ <em>(Schedule Slip)</em></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$CPI = \frac{2,150,000}{2,600,000} =$</strong> <strong>$0.83$</strong> <em>(Unfavorable: spending PKR 1.20 to achieve PKR 1.00 of work)</em></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$SPI = \frac{2,150,000}{2,800,000} =$</strong> <strong>$0.77$</strong> <em>(Unfavorable: progressing at only 77% of planned velocity)</em></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>$EAC = \frac{5,000,000}{0.83} =$</strong> <strong>PKR 6,024,096</strong> <em>(Projected overrun of PKR 1,024,096 if unchecked)</em></p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">5.2 Schedule Delay & Ripple Effect Propagation Engine</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">When an upstream activity slips, the ripple effect shifts the start dates of all dependent downstream activities:</p>
+
+<pre class="bg-slate-900 text-slate-100 p-4 rounded-xl my-4 text-xs font-mono overflow-x-auto shadow-inner"><code>javascript
+<p class="my-3 text-slate-700 leading-relaxed text-sm">function calculateSchedule() {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const db = readDatabase();</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const activities = [...db.activities];</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const delayMap = {};</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// First pass: Record initial delays</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">activities.forEach(a =&gt; {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">delayMap[a.id] = a.delayWeeks || 0;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">});</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// Second pass: Propagate ripple delays to dependent activities</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">let changed = true;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">while (changed) {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">changed = false;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">activities.forEach(a =&gt; {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if (a.predecessor && delayMap[a.predecessor] &gt; 0) {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const inheritedDelay = delayMap[a.predecessor];</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if ((delayMap[a.id] || 0) &lt; inheritedDelay) {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">delayMap[a.id] = inheritedDelay + (a.delayWeeks || 0);</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">changed = true;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">}</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">}</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">});</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">}</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// Calculate adjusted end weeks and project finish date</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">let maxProjectEndWeek = db.project.baselineWeeks;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const scheduleResults = activities.map(a =&gt; {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const totalDelay = delayMap[a.id] || 0;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const adjustedStart = a.startWeek + totalDelay;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const adjustedEnd = adjustedStart + a.durationWeeks;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if (adjustedEnd &gt; maxProjectEndWeek) maxProjectEndWeek = adjustedEnd;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">return { ...a, totalDelay, adjustedStart, adjustedEnd, isDelayed: totalDelay &gt; 0 };</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">});</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">return { activities: scheduleResults, computedCompletionWeek: maxProjectEndWeek, projectDelayed: maxProjectEndWeek &gt; db.project.baselineWeeks };</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">}</p>
+</code></pre>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">5.3 Change Request Approval & Baseline Mutation Workflow</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">When the CCB approves a Change Request, the baseline parameters are atomically updated:</p>
+
+<pre class="bg-slate-900 text-slate-100 p-4 rounded-xl my-4 text-xs font-mono overflow-x-auto shadow-inner"><code>javascript
+<p class="my-3 text-slate-700 leading-relaxed text-sm">function approveChangeRequest(crId, approverName = 'Ahmed Khan (CCB Chair)') {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const db = readDatabase();</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const cr = db.change_requests.find(c =&gt; c.id === crId);</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if (!cr) throw new Error(`Change Request ${crId} not found.`);</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if (cr.status === 'APPROVED') return { message: `Change Request ${crId} was already approved.` };</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 1. Mark Change Request as Approved</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">cr.status = 'APPROVED';</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">cr.approvedBy = approverName;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">cr.approvalDate = new Date().toISOString().split('T')[0];</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 2. Atomically adjust project baseline budget and timeline</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">db.project.revisedBudget += cr.costImpactPKR;</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">db.project.revisedWeeks += cr.scheduleWeeks;</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 3. Activate associated requirement in scope baseline</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if (cr.targetRequirementId) {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">const req = db.requirements.find(r =&gt; r.id === cr.targetRequirementId);</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">if (req) req.status = 'APPROVED';</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">}</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">// 4. Persist changes to disk</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">writeDatabase(db);</p>
+
+<p class="my-3 text-slate-700 leading-relaxed text-sm">return {</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">success: true,</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">message: `CR ${crId} approved: Budget updated to PKR ${db.project.revisedBudget.toLocaleString()}, Timeline updated to ${db.project.revisedWeeks} weeks.`,</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">revisedBudget: db.project.revisedBudget,</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">revisedWeeks: db.project.revisedWeeks</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">};</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">}</p>
+</code></pre>
+
+<hr class="my-8 border-slate-200" />
+
+<h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">CHAPTER 6: TESTING AND VERIFICATION</h1>
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">6.1 Automated Backend Test Suite Execution</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">To ensure complete software quality, a formal automated test suite was developed in `server/test/spm.test.js`. The suite executes 9 comprehensive test assertions covering all project management rules and algorithmic functions:</p>
+
+<div class="my-6 text-center">
+<img src="screenshots/10_tests.png" alt="Figure 6.1: Automated Backend Test Suite Output" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 6.1: Automated Backend Test Suite Output</p>
+</div>
+<em>Figure 6.1: Automated Backend Test Suite Execution Terminal Output (9/9 Passed 100%)</em>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">6.2 Detailed Test Cases & Verification Results</h3>
+
+<strong>Table 6.1: Test Case 1 - Project Charter & Baseline Verification</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-01</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Verify project charter baseline values (16 weeks duration, PKR 5,000,000 budget)</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">Query `GET /api/charter`</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">`baselineWeeks === 16`, `baselineBudget === 5000000`</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">Baseline weeks = 16, Baseline budget = PKR 5,000,000</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<strong>Table 6.2: Test Case 2 - EVM Mathematical Formula Validation</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-02</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Validate EVM engine produces correct numerical values for $PV, EV, AC, CPI, SPI$</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">Query `GET /api/cost/evm` at Week 8</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">$CPI = EV / AC \pm 0.01$, $SPI = EV / PV \pm 0.01$</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">$PV = 2.8\text{M}$, $EV = 2.15\text{M}$, $AC = 2.6\text{M}$, $CPI = 0.83$, $SPI = 0.77$</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<strong>Table 6.3: Test Case 3 - EVM Threshold & Health Alert Detection</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-03</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Ensure cost overrun ($CPI < 1.0$) and schedule delay ($SPI < 1.0$) trigger system warnings</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">EVM result with $CPI = 0.83, SPI = 0.77$</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">`warnings.length >= 2`, warning types include `COST_OVERRUN` and `SCHEDULE_DELAY`</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">Both warning flags generated with informative diagnostic messages</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<strong>Table 6.4: Test Case 4 - Scope Containment & Unapproved Change Isolation</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-04</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Verify that AI Diagnosis (REQ-007) and Mobile App (REQ-008) are unapproved before CCB action</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">Query `GET /api/scope` baseline requirements</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">`REQ-007.status !== 'APPROVED'`, `REQ-008.status !== 'APPROVED'`</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">Scope containment strictly enforced; requirements held in pending status</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<strong>Table 6.5: Test Case 5 - Change Request 1 Approval Impact</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-05</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Verify approving CR-001 (AI Diagnosis) increases budget by PKR 500k and deadline by 2 weeks</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">Execute `POST /api/dashboard/approve-cr/CR-001`</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">Revised budget = PKR 5,500,000; Revised duration = 18 weeks</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">Revised budget updated to PKR 5.5M; Revised duration updated to 18 weeks</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<strong>Table 6.6: Test Case 6 - Change Request 2 Approval Impact</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-06</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Verify approving CR-002 (Mobile App) increases budget to PKR 5.8M and deadline to 19 weeks</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">Execute `POST /api/dashboard/approve-cr/CR-002`</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">Revised budget = PKR 5,800,000; Revised duration = 19 weeks</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">Revised budget updated to PKR 5.8M; Revised duration updated to 19 weeks</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<strong>Table 6.7: Test Case 7 - Predecessor Delay Ripple Propagation</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-07</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Verify activity delays propagate through dependencies and project finish week increases</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">Introduce 2-week delay in ACT-03 (Core Framework)</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">ACT-04 and downstream tasks shifted by +2 weeks</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">Calculated finish week shifts accurately reflecting chain-reaction delay</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<strong>Table 6.8: Test Case 8 - Defect Tracking Lifecycle Verification</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-08</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Verify defect tracker accurately stores and prioritizes clinical double-booking defects</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">Query `GET /api/quality/defects`</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">DEF-001 (Appointment Collision) recorded with `CRITICAL` severity and assigned owner</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">DEF-001 recorded with full audit trail and resolution notes</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<strong>Table 6.9: Test Case 9 - 5x5 Risk Matrix Severity Scoring</strong>
+<div class="overflow-x-auto my-6"><table class="w-full text-xs text-left border-collapse border border-slate-300 shadow-xs rounded-lg overflow-hidden"><tr class="bg-teal-800 text-white font-bold"><th class="border border-slate-300 p-2.5">Field</th><th class="border border-slate-300 p-2.5">Details</th></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Case ID</strong></td><td class="border border-slate-300 p-2.5"><strong>TC-09</strong></td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Test Objective</strong></td><td class="border border-slate-300 p-2.5">Verify dynamic severity score calculation ($P \times I$) and risk ranking</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Input Data</strong></td><td class="border border-slate-300 p-2.5">Query `GET /api/quality/risks`</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Expected Result</strong></td><td class="border border-slate-300 p-2.5">RSK-01 (Double Booking: $P=4, I=5 \implies \text{Score}=20$) ranked highest severity</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Actual Result</strong></td><td class="border border-slate-300 p-2.5">All risks sorted by mathematical score; high-priority callouts generated</td></tr><tr class="even:bg-slate-50 hover:bg-slate-100/60 text-slate-700"><td class="border border-slate-300 p-2.5"><strong>Status</strong></td><td class="border border-slate-300 p-2.5"><strong>PASSED (100%)</strong></td></tr></table></div>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">6.3 In-Browser Real-Time Formula Validation</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">In addition to automated backend assertions, the frontend client validates mathematical calculations directly in the browser DOM. When the user toggles between views or activates the Change Request approval buttons, all KPI cards, variance formulas, and warning badges dynamically re-evaluate without page reload, proving the reactive integrity of the React 19 state architecture.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">6.4 Verification of Learning Outcomes</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The implemented project satisfies all core Course Learning Outcomes (CLOs) of the Software Project Management curriculum:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>CLO 1 (Project Integration & Initiation):</strong> Formulated an actionable Project Charter, stakeholder register, and governance model.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>CLO 2 (Scope Planning & WBS):</strong> Decomposed a complex multi-hospital system into a 3-level WBS with formal dictionary and scope containment.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>CLO 3 (Schedule Management):</strong> Constructed an activity network with predecessor dependencies and automated delay ripple calculations.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>CLO 4 (Cost Estimation & EVM):</strong> Applied Earned Value Management techniques to monitor variances ($CV, SV$) and performance indexes ($CPI, SPI$).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>CLO 5 (Quality & Risk Control):</strong> Formulated quality acceptance standards, tracked defects, and quantified risks using a 5x5 matrix.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>CLO 6 (Modern Tooling & Deployment):</strong> Deployed a functional full-stack web application with automated test suites on a public cloud platform.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h1 class="text-3xl font-extrabold text-slate-900 mt-8 mb-4 border-b border-slate-300 pb-2">CHAPTER 7: PROJECT CLOSURE, DEPLOYMENT & CONCLUSION</h1>
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">7.1 Project Closure Criteria & Status</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">A software project reaches formal closure when all technical, commercial, and operational conditions are satisfied:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. <strong>Deliverable Acceptance:</strong> All deliverables defined in the WBS dictionary have been verified against quality criteria.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. <strong>Open Defect Resolution:</strong> All Critical (`P1`) and High (`P2`) severity defects are verified as resolved.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. <strong>Budget Re-alignment:</strong> All expenditures are reconciled against the revised PKR 5,800,000 baseline.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">4. <strong>Clinical User Sign-Off:</strong> Hospital administrators from all five facilities have signed off on user acceptance testing (UAT).</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">5. <strong>Knowledge Transfer:</strong> System operations manuals and deployment guides have been transitioned to hospital IT teams.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">7.2 Lessons Learned & Best Practices</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Active EVM Over Static Gantt Charts:</strong> Tracking $CPI$ and $SPI$ on a weekly basis provided early warning of cost overruns at Week 8, enabling corrective action before the budget reserve was depleted.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Strict Scope Governance Protects Delivery:</strong> Without the formal CCB approval workflow, the addition of AI diagnostics and mobile apps would have caused uncontrolled project failure. By quantifying cost (+PKR 800k) and schedule (+3w) impacts up front, stakeholder alignment was preserved.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Automated Testing Guarantees Algorithmic Reliability:</strong> Automated regression testing of mathematical formulas prevented subtle rounding errors in financial and schedule calculations.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">7.3 Production Cloud Deployment (Vercel)</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The complete system is deployed live in production on the Vercel global edge network:</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Live URL:</strong> <a href="https://smart-healthcare-project-management.vercel.app/" class="text-teal-600 hover:underline font-medium" target="_blank">https://smart-healthcare-project-management.vercel.app/</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- <strong>Repository:</strong> <a href="https://github.com/arfeenawan15/smart_healthcare_project_management_system" class="text-teal-600 hover:underline font-medium" target="_blank">https://github.com/arfeenawan15/smart_healthcare_project_management_system</a></p>
+
+<div class="my-6 text-center">
+<img src="screenshots/01_dashboard.png" alt="Figure 7.1: Production Deployment on Vercel" class="rounded-xl border border-slate-300 shadow-md max-w-full mx-auto" style="max-height: 480px; object-fit: contain;" />
+<p class="text-xs text-slate-500 italic mt-2 font-medium">Figure 7.1: Production Deployment on Vercel</p>
+</div>
+<em>Figure 7.1: Smart Healthcare SPM System Deployed Live in Production on Vercel</em>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">7.4 Conclusion & Future Work</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">The <strong>Smart Healthcare Project Management and Monitoring System</strong> successfully bridges the gap between theoretical software project management concepts and real-world operational execution. By implementing active mathematical models for EVM, dependency ripple propagation, change control, and risk quantification, the system provides project leaders with the tools necessary to navigate complex multi-hospital healthcare deployments.</p>
+
+<strong>Future Enhancements:</strong>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- Integration with clinical FHIR (Fast Healthcare Interoperability Resources) data protocols.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- Machine-learning predictive forecasting of task duration estimates based on developer velocity.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">- Automated Slack / Microsoft Teams webhook notifications for critical defect logging and threshold breach alerts.</p>
+
+<hr class="my-8 border-slate-200" />
+
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">7.5 References</h3>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">1. Project Management Institute. (2021). <em>A Guide to the Project Management Body of Knowledge (PMBOK Guide)</em> (7th ed.). Project Management Institute.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">2. Kerzner, H. (2017). <em>Project Management: A Systems Approach to Planning, Scheduling, and Controlling</em> (12th ed.). John Wiley & Sons.</p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">3. React Core Team. (2026). <em>React 19 Official Documentation & Architecture Guide</em>. <a href="https://react.dev/" class="text-teal-600 hover:underline font-medium" target="_blank">https://react.dev/</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">4. Node.js Foundation. (2026). <em>Node.js Runtime Documentation & API Reference</em>. <a href="https://nodejs.org/en/docs/" class="text-teal-600 hover:underline font-medium" target="_blank">https://nodejs.org/en/docs/</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">5. Express.js Team. (2026). <em>Express 5 Routing, Middleware, and Best Practices</em>. <a href="https://expressjs.com/" class="text-teal-600 hover:underline font-medium" target="_blank">https://expressjs.com/</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">6. Tailwind Labs. (2026). <em>Tailwind CSS Utility Styling Documentation</em>. <a href="https://tailwindcss.com/docs" class="text-teal-600 hover:underline font-medium" target="_blank">https://tailwindcss.com/docs</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">7. Vercel Inc. (2026). <em>Vercel Edge Platform & Serverless Deployment Documentation</em>. <a href="https://vercel.com/docs" class="text-teal-600 hover:underline font-medium" target="_blank">https://vercel.com/docs</a></p>
+<p class="my-3 text-slate-700 leading-relaxed text-sm">8. GitHub Inc. (2026). <em>GitHub Actions, Git SCM & Repository Best Practices</em>. <a href="https://docs.github.com/" class="text-teal-600 hover:underline font-medium" target="_blank">https://docs.github.com/</a></p>
+
+<hr class="my-8 border-slate-200" />
+<strong>Report End • Department of Software Engineering, COMSATS University Islamabad, Sahiwal Campus</strong>
+
+  </div>
+</body>
+</html>
