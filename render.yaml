@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: smart-healthcare-spm
+    env: node
+    plan: free
+    buildCommand: npm install && npm --prefix server install && npm --prefix client install && npm --prefix client run build
+    startCommand: node server/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
