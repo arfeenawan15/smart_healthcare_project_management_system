@@ -20,3 +20,4 @@ Thumbs.db
 # Build outputs (optional, but dist can be kept or built via npm run build)
 dist/
 build/
+
